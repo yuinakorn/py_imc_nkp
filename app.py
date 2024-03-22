@@ -173,10 +173,10 @@ def main():
                     dob_str = row[4].strftime("%Y-%m-%d %H:%M:%S")
 
                     sql = """
-                    INSERT IGNORE INTO pat (HCODE, HN, CHANGWAT, AMPHUR, DOB, SEX, MARRIAGE, OCCUPA, NATION, PERSON_ID, NAMEPAT, TITLE, FNAME, LNAME, IDTYPE)
-                    VALUES (%s,%s,%s,%s,%s,%s,%s,%s,%s,%s,%s,%s,%s,%s,%s)
+                    INSERT IGNORE INTO pat (HCODE, HN, CHANGWAT, AMPHUR, DOB, SEX, MARRIAGE, OCCUPA, NATION, PERSON_ID, NAMEPAT, TITLE, FNAME, LNAME, IDTYPE, ADDRESS, AREA)
+                    VALUES (%s,%s,%s,%s,%s,%s,%s,%s,%s,%s,%s,%s,%s,%s,%s,%s,%s)
                     """
-                    val = (row[0], row[1], row[2], row[3], dob_str, row[5], row[6], row[7], row[8], row[9], row[10], row[11], row[12], row[13], row[14])
+                    val = (row[0], row[1], row[2], row[3], dob_str, row[5], row[6], row[7], row[8], row[9], row[10], row[11], row[12], row[13], row[14], row[15], row[16])
                     print("sql : ", sql % val)
                     cursor133.execute(sql, val)
                     connection133.commit()
